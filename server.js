@@ -6,7 +6,10 @@ const app = express();
 //if there's no environment variable for port set, it will default to 5000
 const PORT = process.env.PORT || 5000;
 //Connect Database
-//connectDB();
+connectDB();
+
+// Init Middleware
+app.use(express.json({ extended: false }));
 
 app.get("/", (req, res) => res.send("API Running"));
 
